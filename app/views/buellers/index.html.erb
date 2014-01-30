@@ -1,0 +1,22 @@
+<h1>Listing Students</h1>
+ <%= link_to 'New Student', new_bueller_path %>
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Nickname</th>
+    <th>Email</th>
+  </tr>
+ 
+  <% @buellers.each do |bueller| %>
+    <tr>
+      <td><%= bueller.image %></td>
+      <td><%= bueller.name %></td>
+      <td><%= bueller.nickname %></td>
+      <td><%= bueller.email %></td>
+
+    <td><%= link_to 'Edit', edit_bueller_path(bueller) %></td>
+
+    </tr>
+  <% end %>
+</table>

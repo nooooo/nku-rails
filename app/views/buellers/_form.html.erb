@@ -1,0 +1,34 @@
+<%= form_for @bueller do |f| %>
+  <% if @bueller.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@bueller.errors.count, "error") %> prohibited
+      this student from being saved:</h2>
+    <ul>
+    <% @bueller.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :Name %>
+  </p>
+ 
+  <p>
+    <%= f.label :Nickname %><br>
+    <%= f.text_area :Nickname %>
+  </p>
+  <p>
+    <%= f.label :ImageUrl %><br>
+    <%= f.text_area :ImageUrl %>
+  </p>
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_area :Email %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
